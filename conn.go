@@ -147,7 +147,7 @@ func (c *conn) write(header parser.Header, args []reflect.Value) {
 	case <-c.quitChan:
 		return
 	default:
-			fmt.Sprintf("write busy ");
+		fmt.Sprintf("write busy ")
 	}
 }
 
