@@ -1,6 +1,7 @@
 package socketio
 
 import (
+	"fmt"
 	"io"
 	"net"
 	"net/http"
@@ -145,6 +146,8 @@ func (c *conn) write(header parser.Header, args []reflect.Value) {
 	case c.writeChan <- pkg:
 	case <-c.quitChan:
 		return
+	default:
+			fmt.Sprintf("write busy ");
 	}
 }
 
